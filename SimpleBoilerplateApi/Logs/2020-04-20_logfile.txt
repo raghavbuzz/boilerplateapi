@@ -1,0 +1,8 @@
+2020-04-20 01:12:33.3266 INFO Here is info message from the controller.
+2020-04-20 01:12:33.4241 DEBUG Here is debug message from the controller.
+2020-04-20 01:12:33.4400 WARN Here is warn message from the controller.
+2020-04-20 01:12:33.4611 ERROR Here is error message from the controller.
+2020-04-20 03:29:22.5545 INFO Here is info message from the controller.
+2020-04-20 03:29:22.6364 DEBUG Here is debug message from the controller.
+2020-04-20 03:29:22.6550 WARN Here is warn message from the controller.
+2020-04-20 03:29:22.6713 ERROR Here is error message from the controller.

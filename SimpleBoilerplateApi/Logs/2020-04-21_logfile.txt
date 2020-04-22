@@ -1,0 +1,34 @@
+2020-04-21 00:48:07.8381 INFO Here is info message from the controller.
+2020-04-21 00:48:07.9823 DEBUG Here is debug message from the controller.
+2020-04-21 00:48:08.0317 WARN Here is warn message from the controller.
+2020-04-21 00:48:08.0457 ERROR Here is error message from the controller.
+2020-04-21 00:50:37.6069 INFO Here is info message from the controller.
+2020-04-21 00:50:37.7025 DEBUG Here is debug message from the controller.
+2020-04-21 00:50:37.7163 WARN Here is warn message from the controller.
+2020-04-21 00:50:37.7303 ERROR Here is error message from the controller.
+2020-04-21 00:52:33.7502 INFO Here is info message from the controller.
+2020-04-21 00:52:33.9153 DEBUG Here is debug message from the controller.
+2020-04-21 00:52:33.9450 WARN Here is warn message from the controller.
+2020-04-21 00:52:33.9766 ERROR Here is error message from the controller.
+2020-04-21 01:11:37.6202 INFO Here is info message from the controller.
+2020-04-21 01:11:37.7142 DEBUG Here is debug message from the controller.
+2020-04-21 01:11:37.7307 WARN Here is warn message from the controller.
+2020-04-21 01:11:37.7486 ERROR Here is error message from the controller.
+2020-04-21 01:36:28.8653 INFO Here is info message from the controller.
+2020-04-21 01:36:28.9502 DEBUG Here is debug message from the controller.
+2020-04-21 01:36:28.9736 WARN Here is warn message from the controller.
+2020-04-21 01:36:28.9895 ERROR Here is error message from the controller.
+2020-04-21 01:36:53.2859 INFO Returned all owners from database.
+2020-04-21 01:38:17.5710 INFO Returned all owners from database.
+2020-04-21 01:48:24.1838 INFO Returned all owners from database.
+2020-04-21 22:39:57.1488 INFO Returned all owners from database.
+2020-04-21 22:49:21.0852 INFO Returned all owners from database.
+2020-04-21 22:49:39.4748 INFO Returned all owners from database.
+2020-04-21 22:53:55.4434 INFO Returned all owners from database.
+2020-04-21 23:06:59.1146 INFO Returned all owners from database.
+2020-04-21 23:07:02.0686 INFO Returned all owners from database.
+2020-04-21 23:07:36.9535 INFO Returned all owners from database.
+2020-04-21 23:07:39.6792 INFO Returned all owners from database.
+2020-04-21 23:50:46.8438 INFO Returned owner with id: 1
+2020-04-21 23:51:02.4015 ERROR Owner with id: 100, hasn't been found in db.
+2020-04-21 23:51:11.6038 INFO Returned owner with id: 1
