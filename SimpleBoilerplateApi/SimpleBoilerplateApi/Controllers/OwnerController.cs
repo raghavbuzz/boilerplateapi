@@ -26,6 +26,9 @@ namespace SimpleBoilerplateApi.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// [Sync] Gets all the Owners
+        /// </summary>        
         [HttpGet("v1")]
         public IActionResult GetAllOwners()
         {
@@ -39,15 +42,20 @@ namespace SimpleBoilerplateApi.Controllers
 
                 var ownerResult = _mapper.Map<IEnumerable<OwnerDto>>(owners);
 
+                int num = Convert.ToInt32("a");
+
                 return Ok(ownerResult);
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside GetAllOwners action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Sync] Gets Owners by Id
+        /// </summary>
         [HttpGet("v1/{id}", Name ="OwnerById")]
         public IActionResult GetOwnerById(long id)
         {
@@ -71,10 +79,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside GetOwnerById action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Sync] Gets Owners with Account detail by Id
+        /// </summary>
         [HttpGet("v1/{id}/account")]
         public IActionResult GetOwnerWithDetails(long id)
         {
@@ -98,10 +109,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside GetOwnerWithDetails action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Sync] Creates new Owners
+        /// </summary>
         [HttpPost("v1")]
         public IActionResult CreateOwner([FromBody]OwnerForCreationDto ownerDto)
         {
@@ -131,10 +145,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside CreateOwner action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Sync] Updates an existing Owners by Id
+        /// </summary>
         [HttpPut("v1/{id}")]
         public IActionResult UpdateOwner(long id, [FromBody]OwnerForUpdateDto ownerDto)
         {
@@ -169,10 +186,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside UpdateOwner action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Sync] Deletes Owners by Id
+        /// </summary>
         [HttpDelete("v1/{id}")]
         public IActionResult DeleteOwner(long id)
         {
@@ -199,10 +219,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside DeleteOwner action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Async] Gets all the Owners
+        /// </summary>     
         [HttpGet("v2")]
         public async Task<IActionResult> GetAllOwnersAsync()
         {
@@ -217,10 +240,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside GetAllOwners action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Async] Gets Owners by Id
+        /// </summary>
         [HttpGet("v2/{id}", Name = "OwnerByIdAsync")]
         public async Task<IActionResult> GetOwnerByIdAsync(long id)
         {
@@ -243,10 +269,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside GetOwnerById action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Async] Gets Owners with Account detail by Id
+        /// </summary>
         [HttpGet("v2/{id}/account")]
         public async Task<IActionResult> GetOwnerWithDetailsAsync(long id)
         {
@@ -269,10 +298,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside GetOwnerWithDetails action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Async] Creates new Owners
+        /// </summary>
         [HttpPost("v2")]
         public async Task<IActionResult> CreateOwnerAsync([FromBody]OwnerForCreationDto ownerDto)
         {
@@ -302,10 +334,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside CreateOwner action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Async] Updates an existing Owners by Id
+        /// </summary>
         [HttpPut("v2/{id}")]
         public async Task<IActionResult> UpdateOwnerAsync(long id, [FromBody]OwnerForUpdateDto ownerDto)
         {
@@ -340,10 +375,13 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside UpdateOwner action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
 
+        /// <summary>
+        /// [Async] Deletes Owners by Id
+        /// </summary>
         [HttpDelete("v2/{id}")]
         public async Task<IActionResult> DeleteOwnerAsync(long id)
         {
@@ -370,7 +408,7 @@ namespace SimpleBoilerplateApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside DeleteOwner action: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, ex.Message);
             }
         }
     }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoWrapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -40,7 +41,8 @@ namespace SimpleBoilerplateApi
             services.ConfigureSqlContext(Configuration);
             services.ConfigureRepositoryWrapper();
             services.AddAutoMapper(typeof(Startup));
-
+            services.ConfigureSwagger();
+            services.ConfigureHealthCheck(Configuration);                        
             services.AddControllers();
         }
 
@@ -67,6 +69,22 @@ namespace SimpleBoilerplateApi
                 ForwardedHeaders = ForwardedHeaders.All
             });
 
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Boilerplate API V1");
+            });
+
+            // Enable Autowrapper for handling exceptions gracefully
+            app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions { IsDebug = true });
+
+            // Enable Health Check service
+            app.UseHealthChecks("/healthcheck");
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -74,6 +92,7 @@ namespace SimpleBoilerplateApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecksUI();
             });
         }
     }
